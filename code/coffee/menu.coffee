@@ -1,5 +1,6 @@
 define (require) ->
   ko = require 'knockout'
+  $ = require "jquery"
 
   PAGE =
     SETTINGS: "settings"
@@ -21,8 +22,8 @@ define (require) ->
     Open_Main: (d, e) =>
       @page PAGE.MAIN
 
-    CalibrateBtn: () =>
-      return
+    CalibrateBtn: (d, e) =>
+      @page PAGE.SETTINGS
 
 
 

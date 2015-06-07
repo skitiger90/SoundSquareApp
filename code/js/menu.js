@@ -2,8 +2,9 @@
   var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   define(function(require) {
-    var Main_App, PAGE, ko;
+    var $, Main_App, PAGE, ko;
     ko = require('knockout');
+    $ = require("jquery");
     PAGE = {
       SETTINGS: "settings",
       TIMERS: "timers",
@@ -30,7 +31,9 @@
         return this.page(PAGE.MAIN);
       };
 
-      Main_App.prototype.CalibrateBtn = function() {};
+      Main_App.prototype.CalibrateBtn = function(d, e) {
+        return this.page(PAGE.SETTINGS);
+      };
 
       return Main_App;
 
