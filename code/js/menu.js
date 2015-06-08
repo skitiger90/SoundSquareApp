@@ -2,7 +2,7 @@
   var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   define(function(require) {
-    var $, Main_App, PAGE, ko;
+    var $, Menu, PAGE, ko;
     ko = require('knockout');
     $ = require("jquery");
     PAGE = {
@@ -10,8 +10,8 @@
       TIMERS: "timers",
       MAIN: "main"
     };
-    Main_App = (function() {
-      function Main_App() {
+    Menu = (function() {
+      function Menu() {
         this.CalibrateBtn = bind(this.CalibrateBtn, this);
         this.Open_Main = bind(this.Open_Main, this);
         this.Open_Timers = bind(this.Open_Timers, this);
@@ -19,26 +19,26 @@
         this.page = ko.observable(PAGE.MAIN);
       }
 
-      Main_App.prototype.Open_Settings = function(d, e) {
+      Menu.prototype.Open_Settings = function(d, e) {
         return this.page(PAGE.SETTINGS);
       };
 
-      Main_App.prototype.Open_Timers = function(d, e) {
+      Menu.prototype.Open_Timers = function(d, e) {
         return this.page(PAGE.TIMERS);
       };
 
-      Main_App.prototype.Open_Main = function(d, e) {
+      Menu.prototype.Open_Main = function(d, e) {
         return this.page(PAGE.MAIN);
       };
 
-      Main_App.prototype.CalibrateBtn = function(d, e) {
+      Menu.prototype.CalibrateBtn = function(d, e) {
         return this.page(PAGE.SETTINGS);
       };
 
-      return Main_App;
+      return Menu;
 
     })();
-    return new Main_App();
+    return new Menu();
   });
 
 }).call(this);

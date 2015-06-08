@@ -7,7 +7,7 @@ define (require) ->
     TIMERS: "timers"
     MAIN:   "main"
 
-  class Main_App
+  class Menu
     constructor: ->
       #To magic here
       #@page = ko.observable PAGE.TIMERS
@@ -27,4 +27,4 @@ define (require) ->
 
 
 
-  return new Main_App()
+  return new Menu()

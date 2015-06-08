@@ -1,16 +1,49 @@
 <!-- inside a <div data-role="content"/> -->
 <h3>Main (Main.html)</h3>
 
+<!-- <table>
+<div class="container-fluid">
+  <div class="col-xs-6">
+    <button class="btn btn-primary" data-bind="click:   Open_Settings">Settings
+    </button>
+  </div>
+  <div class="col-xs-6">
+    <button class="btn btn-primary" data-bind="click: Open_Settings">Help
+    </button>
+  </div>
+
+<div class="row">
+  <div class="col-md-1">BUBBLE</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-6">.col-md-6</div>
+  <div class="col-md-6">.col-md-6</div>
+</div>
+</table> -->
+
+
+
+
+
+
+
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
  <tr>
   <td width=319 valign=top style='width:239.4pt;border:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
- <p align=center><button class="btn" data-bind="click: Open_Settings">Settings</button></p>
+ <p align=center><button class="btn btn-primary" data-bind="click: SettingsBtn">Settings</button>
+  </p>
   </td>
   <td width=319 valign=top style='width:239.4pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p align=center><button class="btn" data-bind="click: Open_Settings">Help</button></p>
+  <p align=center><button class="btn btn-primary" data-bind="click: HelpBtn">Help</button></p>
   </td>
  </tr>
  <tr>
@@ -23,13 +56,13 @@
  <tr>
   <td width=638 colspan=2 valign=top style='width:6.65in;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p align=center><button class="btn" data-bind="click: CalibrateBtn">Start/Stop</button></p>
+  <p align=center><button class="btn btn-primary" data-bind="click: CalibrateBtn">Calibrate</button></p>
   </td>
  </tr>
  <tr>
   <td width=638 colspan=2 valign=top style='width:6.65in;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p align=center><button class="btn" data-bind="click: CalibrateBtn">Calibrate</button></p>
+  <p align=center><button class="btn btn-primary btn-lg btn-block" data-bind="click: SoundOnOffBtn">Start</button></p>
   </td>
  </tr>
  <tr>

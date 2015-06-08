@@ -2,38 +2,31 @@
   var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   define(function(require) {
-    var $, Main_Page, PAGE, ko;
+    var $, Main_Page, ko, menu;
     ko = require('knockout');
     $ = require("jquery");
-    PAGE = {
-      SETTINGS: "settings",
-      TIMERS: "timers",
-      MAIN: "main"
-    };
+    menu = require("menu");
     Main_Page = (function() {
       function Main_Page() {
+        this.SoundOnOffBtn = bind(this.SoundOnOffBtn, this);
         this.CalibrateBtn = bind(this.CalibrateBtn, this);
-        this.Open_Main = bind(this.Open_Main, this);
-        this.Open_Timers = bind(this.Open_Timers, this);
-        this.Open_Settings = bind(this.Open_Settings, this);
-        this.page = ko.observable(PAGE.MAIN);
+        this.HelpBtn = bind(this.HelpBtn, this);
+        this.SettingsBtn = bind(this.SettingsBtn, this);
       }
 
-      Main_Page.prototype.Open_Settings = function(d, e) {
-        return Main_App.page = 'settings';
+      Main_Page.prototype.SettingsBtn = function() {
+        return menu.Open_Settings();
       };
 
-      Main_Page.prototype.Open_Timers = function(d, e) {
-        return this.page(PAGE.TIMERS);
+      Main_Page.prototype.HelpBtn = function() {
+        return menu.Open_Help();
       };
 
-      Main_Page.prototype.Open_Main = function(d, e) {
-        return this.page(PAGE.MAIN);
+      Main_Page.prototype.CalibrateBtn = function() {
+        return menu.CalibrateBtn();
       };
 
-      Main_Page.prototype.CalibrateBtn = function(d, e) {
-        return this.page(PAGE.SETTINGS);
-      };
+      Main_Page.prototype.SoundOnOffBtn = function() {};
 
       return Main_Page;
 
